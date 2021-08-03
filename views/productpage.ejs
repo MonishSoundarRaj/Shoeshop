@@ -1,0 +1,17 @@
+<%-include("partials/header")-%>
+<section>
+    <div class="shoe-car-box">
+        <%for(var i = 0; i < found.length; i++ ){%>
+            <div class="shoe-card">
+                <div class="card-top">
+                    <img class="shoe-image" src="<%=found[i].img_display%>" alt="nike-air-force-1">
+                </div>
+                <div class="shoe-card-bottom">
+                    <h3 class="shoe-card-name"><%if(found[i].name.length < 22){%><%=found[i].name%><%}else{%><%=found[i].name.slice(0, 23)%><%}%></h3>
+                    <h4 class="shoe-card-prize"><%=found[i].price%></h4>
+                </div>
+            </div>
+     <%}%>
+    </div>
+</section>
+<%-include("partials/footer")-%>

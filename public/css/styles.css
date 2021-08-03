@@ -1,0 +1,808 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --font-Roboto: "Roboto", sans-serif;
+  --font-Bebas: "Bebas Neue", cursive;
+  --font-Raleway: 'Raleway', sans-serif;
+}
+html
+{
+  font-size: 2vw;
+}
+
+/* css for font Awesome icons */
+.fas-custom {
+  padding: 10px;
+  color: white;
+}
+
+.chevron {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+.fa-chevron-left {
+  margin-top: 10px;
+}
+
+/* nav bar style code */
+.nav{
+  background: #1F2833;
+  color: white;
+  height: 5vw;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+}
+.logo{ 
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  cursor: default;
+}
+.logo-a{
+  text-decoration: none;
+  color: white;
+}
+.logo-shop{
+  color: #c5c6c7;
+}
+
+.nav-ul-box{
+  display: flex;
+  list-style-type: none;
+}
+.nav-li{
+  margin:  0 2rem 0 0 ;
+  font-family: var(--font-Bebas);
+}
+.nav-li a{
+  text-decoration: none;
+  color: white;
+}
+
+
+/* search bar css */
+.searchbar-box{
+  position: relative;
+  width: 20%;
+  height: 0.2rem;
+  background: white;
+  border: 1px solid white;
+  border-radius: 50px;
+  padding: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-form{
+  width: 100%;
+}
+.search{
+  width: 90%;
+  height: 60%;
+  /* padding: 0.2rem; */
+  outline: none;
+  border: none;
+  font-size: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+.search-button{
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: 0.6rem;
+}
+.search-icon{
+  color:black;
+  cursor: pointer;
+}
+
+/* check account css*/
+.check-account-box{
+  display: flex;
+  align-items: center;
+  font-size: 0.6rem;
+  font-family: var(--font-Bebas);
+  height: 1rem;
+}
+
+.fa-user-custom{
+  font-size: 1rem;
+  margin-right: 0.2rem;
+}
+
+
+/* cart  */
+.fa-cart-custom{
+  height: 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+/* carousel start */
+.main-hero-container{
+    overflow: hidden;
+}  
+.carousel-container{
+    width: 300vw;
+    display: flex;
+} 
+
+/* carousel-common-element-style */
+.nike-logo {
+  width: 3rem;
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.circle-left {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translatey(-50%);
+  z-index: 0;
+}
+
+
+/* First(active) carousel-element */
+.first-carousel-element {
+  width: 100vw;
+  height: 80vh;
+  background-image: linear-gradient(to right, #ffe262, #fff069);
+  font-family: var(--font-Roboto);
+  color: white;
+  position: relative;
+}
+.nike-green {
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14rem;
+  transform: rotatey(3.142rad) translate(50%, -50%);
+}
+/* .nike-green-box::after{
+  content: "";
+  width: 250%;
+  height: 100%;
+  background: linear-gradient(to right,transparent, #ffe262, #fff069);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  animation: bannerAnim 2s linear forwards;
+}
+@keyframes bannerAnim {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -250%;
+  }
+} */
+.text-nike {
+  font-size: 6rem;
+  opacity: 0.5;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+.bottom-text-first-element {
+  font-size: 1rem;
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+/* Second(active) carousel-element */
+.second-carousel-element {
+  width: 100vw;
+  height: 80vh;
+  background: linear-gradient(to right, #3f0d12, #a71d31);
+  font-family: var(--font-Roboto);
+  color: white;
+  position: relative;
+}
+
+.second-element-carousel-h1 {
+  font-size: 6rem;
+  opacity: 0.5;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.second-element-carousel-h2 {
+  margin-top: 3%;
+  font-size: 2rem;
+  opacity: 0.5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.nike-left {
+  position: absolute;
+  width: 18rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-110%, -50%);
+  z-index: 1;
+}
+
+.nike-right {
+  position: absolute;
+  width: 18rem;
+  top: 50%;
+  right: 50%;
+  transform: rotatey(3.142rad) translate(-110%, -50%);
+  z-index: 1;
+}
+
+/* Third(active) carousel-element */
+.third-carousel-element {
+  width: 100vw;
+  height: 80vh;
+  background: linear-gradient(to right, #80ffbb, #9affc9);
+  font-family: var(--font-Roboto);
+  color: white;
+  position: relative;
+}
+
+.nike-black{
+    width: 16rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 1;
+}
+
+
+.third-element-carousel-h1{
+    font-family: var(--font-Bebas);
+    display: inline-block;
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+.back-09{
+    font-family: var(--font-Bebas);
+    display: inline-block;
+    font-size: 9rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 0;
+}
+
+.third-element-carousel-last-h1{
+    font-family: var(--font-Bebas);
+    display: inline-block;
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    right: 25%;
+    transform: translate(50%, -50%);
+}
+
+.products{
+  background: linear-gradient(to right, #ebebff, #f5ebff);
+}
+.men-shoes{
+  width: auto;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.men-h1{
+  font-family: var(--font-Roboto);
+  margin-right: 1rem;
+}
+/* .top-of{
+  height: 12rem;
+  width: 10rem;
+  color: white;
+} */
+.men-shoe-card{
+   height: 12rem;
+   width: 10rem;
+   background-color: #F8F8ff;
+   border-radius: 0.5rem;
+   margin: 10px;
+   text-align: center;
+   font-family: var(--font-Bebas);
+   font-size: 1rem;
+   transition: box-shadow 0.3s;
+   cursor: pointer;
+}
+.men-shoe-card-top{
+  height: 70%;
+}
+.shoe-image{
+  margin-top: 0.5rem; 
+  width: 8rem;
+}
+.men-shoe-card-bottom{
+  cursor: default;
+}
+
+.men-shoe-card:hover{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+@media(max-width: 530px){
+  .men-shoes{
+    flex-direction: column;
+  }
+  .adidas-banner{
+    display: none;
+  }
+  .footer{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* adidas banner */
+.adidas-banner{
+  width: auto;
+  height: 80vh;
+  background: linear-gradient(10deg, #000000 60%, #414141 75%, #2d3436);
+  position: relative;
+  font-family: var(--font-Bebas);
+  color: white;
+}
+.adidas-banner-shoe-img{
+    width: 25%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.adidas-banner span{
+     display: flex;
+     flex-direction: column;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translatey(-50%);
+     text-align: center;
+}
+.h1-text-banner{
+  display: inline;
+  font-size: 0.5rem;
+  position: absolute;
+  left: 60%;
+  bottom: 20%;
+  background: white;
+  border-radius: 1rem;
+  padding: 0.2rem;
+  color: black;
+  font-family: var(--font-Roboto);
+  text-transform: uppercase;
+  cursor: default;
+}
+.adidas-banner h2{
+  display: inline;
+  font-size: 3rem;
+}
+.adidas-banner h3{
+  display: inline;
+  font-size: 2rem; 
+} 
+/* .adidas-banner img:last-child */
+.adidas-logo{
+  position: absolute;
+  width: 2rem;
+  right: 0;
+  bottom: 0;
+} 
+
+/* display page css */
+.display-main{
+  display: flex;
+  font-family: var(--font-Roboto);
+  font-weight: bold;
+}
+.product-image{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto; 
+  grid-gap: 1rem; 
+  margin-left: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.image-display{
+  height: 12rem;
+  width: 10rem;
+  background: #d2d3d4;
+  position: relative;
+}
+
+.left-sub-product-detail img{
+  width: 5rem;
+  margin: 1rem 2rem 1rem 0;
+}
+.sub-product-detail{
+  display: flex;
+  font-size: 0.6rem;
+}
+.display-shoe-image-1{
+  width: 8rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.display-shoe-image-2{
+  width: 8rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(36deg);
+}
+.display-shoe-image-3{
+  width: 8rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(279deg);
+}
+
+/* product details css */
+.product-details{
+  margin-right: 3rem;
+}
+.product-details{
+  padding-left: 2rem;
+  padding-top: 3rem;
+}
+.size-button{
+   padding: 0.3rem 1rem;
+   background: #d2d3d4;
+}
+.size-button button{
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+}
+
+
+.product-title{
+  font-family: var(--font-Bebas);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+}
+.price-tag{
+  margin-top: 0.5rem;
+}
+.qty-box{
+  width: 4rem;
+  text-align: center;
+  margin-top: 0.3rem;
+}
+.right-sub-product-detail{
+  margin-left: 3rem;
+  text-align: center;
+  
+  }
+.qty-box input{
+  margin: 0;
+  padding: 0;
+  border: 1px solid black ;
+  outline: none;
+  width: 20%;
+  padding: 0.2rem 0.5rem; 
+  font-size: 0.3rem;
+}
+.qty-box button{
+  outline: none;
+  border: none;
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 0.2rem;
+  font-weight: bold;
+  font-size: 0.5rem;
+  cursor: pointer;
+}
+
+
+.display-product-buy-now{
+  padding: 0.5rem 01rem;
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  background: black;
+  color: white;
+  margin-top: 3rem;
+ cursor: pointer;
+}
+.product-details p{
+  font-size: 0.8rem;
+}
+
+
+
+/* css for product page */
+.shoe-car-box{
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+@media(max-width: 925px){
+  .shoe-car-box{
+    grid-template-columns: auto auto auto;
+  }
+}
+@media(max-width: 500px){
+  .shoe-car-box{
+    grid-template-columns: auto auto;
+  }
+}
+.shoe-card{
+  height: 12rem;
+  width: 10rem;
+  background-color: #F8F8ff;
+  border-radius: 0.5rem;
+  margin: 10px;
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1rem;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.card-top{
+ height: 70%;
+}
+.shoe-image{
+ margin-top: 2rem;
+ width: 8rem;
+}
+
+.shoe-card:hover{
+ box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+} 
+
+
+/* cart css  */
+.cart-main{
+  font-family: var(--font-Bebas);
+  display: flex;
+  margin: 3rem;
+  text-transform: uppercase;
+}
+.left-side-cart{
+  width: 70%;
+}
+.left-side-cart h2{
+    font-size: 1rem;
+}
+.header-cart{
+  background: #d2d3d4;
+}
+.header-cart h1{
+  font-size: 1rem;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  font-family: sans-serif;
+}
+.items-box ul li{
+  list-style: none;
+}
+.items-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.items-box ul li h1{
+  font-size: 1rem;
+}
+.items-box ul li h4{
+  font-size: 0.4rem;
+  font-family: var(--font-Raleway);
+  margin: 0.2rem 0;
+}
+.items-box ul button{
+  color: black;
+  padding: 0.2rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.items-box ul{
+  margin-left: 3rem;
+}
+.items-box-left{
+  display: flex;
+  align-items: center;
+}
+
+
+.right-side-cart{
+  margin-left: 2rem;
+  background: black;
+  width: 25%;
+  color: white;
+  height: 20rem;
+  font-size: 0.8rem;
+}
+.summary-details{
+  /* background: #414141; */
+  background: #292929;
+}
+.subtotal-box{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6rem;
+  letter-spacing: 0.1rem;
+  padding: 0.3rem 0;
+  margin: 0.6rem;
+}
+
+.right-side-cart h2{
+  padding: 0.6rem;
+}
+.total-box{
+  font-size: 0.8rem;
+  text-align: center;
+}
+.cart-check-out-btn{
+  background: red;
+  padding: 0.3rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 0%;
+  margin: 0 0 3% 50%;
+  transform: translate(-50%);
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+.cart-check-out-btn:hover{
+  box-shadow: 0 0 10px rgba(230, 0, 0, 0.8) ;
+}
+
+.shoe-image-cart{
+  width: 6rem;
+}
+
+
+/* contact info */
+.address-main{
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 0.5rem;   
+}
+.address-main p{
+   margin: 3rem 0 0 3rem; 
+}
+.address-box{
+  background: rgb(181, 194, 199);
+  font-family: sans-serif;
+ width: 50%;
+  margin: 0 3rem 3rem  3rem;
+  padding: 2rem 0 3rem 3rem;
+}
+.address-box label{
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.6rem;
+  text-transform: capitalize;
+}
+.address-box input{
+  margin-top: 0.5rem;
+  display: block;
+  outline: none;
+  border: none;
+  border-radius: 0%;
+  padding: 0.5rem;
+  width: 60%;
+  font-size: 0.4rem;
+}
+.address-box input:focus::placeholder {
+  color: transparent;
+}
+.address-box h1{
+  color: #9B2335;
+}
+
+.address-box button{
+  border: none;
+  outline: none;
+  padding: 0.4rem;
+  margin-top: 1rem;
+  background: red;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.address-box button:hover{
+  background: #9B2335;
+  color: #000000;
+}
+.container-address{
+  display: flex;
+}
+
+/* footer */
+.footer-box{
+  font-family: var(--font-Roboto);
+  color: white;
+  background: #1F2833;
+}
+.footer{
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.4rem;
+  text-transform: uppercase;
+  }
+.ul-footer{
+    list-style: none;
+  }
+.ul-footer li a{
+    text-decoration: none;
+    color: white;
+  }
+ 
+.delhivery{
+  width: 5rem;
+  color: white;
+}
+.ups{
+  color: white;
+  font-size: 2rem;
+}
+.stripe{
+  width: 3rem;
+}
+.list-item{
+  margin-top: 0.3rem;
+}
+.delivery-list img{
+  margin: 0.5rem 0;
+}
+.delivery-list{
+  text-align: center;
+}
+.payment-powered{
+  text-align: center;
+  margin-right: 1rem;
+}
+.h1-footer{
+  color: rgb(190, 93, 93);
+}

@@ -1,0 +1,51 @@
+<%-include("partials/header")-%>
+<section>
+    <div class="display-main">
+        <div class="product-image">
+            <div class="image-display"><img class="display-shoe-image-1"
+                    src="<%=adidasShoeDisplay[0].img_display%>" alt="nike_air_huarache"></div>
+            <div class="image-display"><img class="display-shoe-image-2"
+                    src="<%=adidasShoeDisplay[0].img_display%>" alt="nike_air_huarache"></div>
+            <div class="image-display"><img class="display-shoe-image-3"
+                    src="<%=adidasShoeDisplay[0].img_display%>" alt="nike_air_huarache"></div>
+        </div>
+        <!-- images/Nike shoes/nike_air_huarache_110.png -->
+        <!-- nike air huarache -->
+        <div class="product-details">
+            <h1 class="product-title"><%=adidasShoeDisplay[0].name%></h1>
+            <div class="sub-product-detail">
+                <div class="left-sub-product-detail">
+                    <table>
+                        <h1 class="size-h1">Size</h1>
+                        <tr>
+                            <td class="size-button"> <button>uk 11</button></td>
+                        </tr>
+                        <tr>
+                            <td class="size-button"><button>uk 9</button></td>
+                        </tr>
+                        <tr>
+                            <td class="size-button"><button>uk 8</button></td>
+                        </tr>
+                    </table>
+                    <h1 class="price-tag"><%=adidasShoeDisplay[0].price%></h1>
+                    <h2 class="tax-included-tag">incl.of taxes</h2>
+                    <img src="images/free_delivery-removebg-preview (1).png" alt="Free Delivery">
+                </div>
+                <div class="right-sub-product-detail">
+                    <h1>Qty</h1>
+                    <div class="qty-box">
+                        <button>-</button>
+                        <input type="text" placeholder="01">
+                        <button>+</button>
+                    </div>
+                    <br>
+                    <button class="display-product-buy-now">Add To Cart</button>
+                </div>
+            </div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos eaque obcaecati, doloribus, tempore
+                nobis vero debitis, dolorum rem asperiores molestiae totam illo laudantium possimus. Facilis harum
+                cum nisi sint debitis.</p>
+        </div>
+    </div>
+</section>
+<%-include("partials/footer")-%>
