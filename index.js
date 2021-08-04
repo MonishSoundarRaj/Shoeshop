@@ -22,7 +22,7 @@ const shoeDetailSchema = new mongoose.Schema({
 const Shoe = new mongoose.model('shoe', shoeDetailSchema);
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'))
+app.use(express.static(__dirname + '/public'))
 app.set('view engine', 'ejs');
 app.use(express.json({ limit: '1mb' }))
 
@@ -98,23 +98,39 @@ app.get("/kids", (req, res) => {
         }
     })
 })
+var shoeArrayServer = [];
 app.get('/cart', (req, res) => {
-    res.render('cart')
+    var subTotal = 0;
+    for(var i = 0; i < shoeArrayServer.length; i++){
+        let prices = Number(shoeArrayServer[i].price.slice(1))
+        subTotal = prices + subTotal;
+    }
+    let total = subTotal + 12 + 15;
+   res.render("cart", { shoeArray: shoeArrayServer, total: total, subTotal: subTotal })
 })
+app.post("/cart", (req, res) => {
+    Shoe.findOne({ _id : req.body.value}, (err, cartitem) => {
+        if(!err){
+            shoeArrayServer.push(cartitem);
+        }else{
+            console.log(err);
+        }
+    })
+})
+
 var displayItem;
-app.route('/display')
+app.route('/display/:id')
     .get((req, res) => {
-        // console.log(displayItem)
         res.render('display', {adidasShoeDisplay: displayItem})
     })
     .post((req, res) => {
-        const id = req.body.value;
+        const id = req.params.id;
         Shoe.find({ _id : id}, (err, Itemsfound) => {
             displayItem = Itemsfound
-            res.redirect("/display")
+            res.redirect("/display/" + id)
         })
     })
-
+    
 app.route('/address')
     .get((req, res) => {
         res.render('address')

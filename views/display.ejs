@@ -29,7 +29,7 @@
                     </table>
                     <h1 class="price-tag"><%=adidasShoeDisplay[0].price%></h1>
                     <h2 class="tax-included-tag">incl.of taxes</h2>
-                    <img src="images/free_delivery-removebg-preview (1).png" alt="Free Delivery">
+                    <img src="/images/free_delivery-removebg-preview (1).png" alt="Free Delivery">
                 </div>
                 <div class="right-sub-product-detail">
                     <h1>Qty</h1>
@@ -39,7 +39,8 @@
                         <button>+</button>
                     </div>
                     <br>
-                    <button class="display-product-buy-now">Add To Cart</button>
+                        <!-- <button class="display-product-buy-now" id = "<%=adidasShoeDisplay[0]._id%>">Add To Cart</button> -->
+                        <div class="display-product-buy-now" id = "<%=adidasShoeDisplay[0]._id%>">Add To Cart</div>
                 </div>
             </div>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos eaque obcaecati, doloribus, tempore
@@ -48,4 +49,4 @@
         </div>
     </div>
 </section>
-<%-include("partials/footer")-%>
+<%-include('partials/footer')-%>

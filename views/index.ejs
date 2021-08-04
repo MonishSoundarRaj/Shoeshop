@@ -62,7 +62,7 @@
             <%const NumberSend =  randomNumberNike%>
              <%for(let i=NumberSend; i < (NumberSend + 4); i++){%>
                
-                    <div class="men-shoe-card">
+                    <div id="<%=foundNikeShoes[i]._id%>" class="men-shoe-card">
                      <div id="<%=foundNikeShoes[i]._id%>" class="men-shoe-card-top">
                             <img id="<%=foundNikeShoes[i]._id%>" class="shoe-image" src="<%=foundNikeShoes[i].img_display%>"
                                alt="<%=foundNikeShoes[i].name%>">
@@ -86,7 +86,7 @@
                 alt="">
             <span>
                 <h2>Iconic Edition</h2>
-                <h3>Error 404!</h3>
+                <h3>ERROR 404!</h3>
             </span>
             <h1 class="h1-text-banner">Coming Soon</h1>
             <img class="adidas-logo" src="images/adidas-white-removebg-preview.png" alt="adidas-logo">
@@ -96,7 +96,7 @@
     <section class="adidas-section">
         <div class="men-shoes">
             <%for(let i=NumberSend; i < (NumberSend + 4); i++){%>
-                   <div class="men-shoe-card">
+                   <div id="<%=foundNikeShoes[i]._id%>" class="men-shoe-card">
                     <div id="<%=foundAdidasShoes[i]._id%>" class="men-shoe-card-top">
                            <img id="<%=foundAdidasShoes[i]._id%>" class="shoe-image" src="<%=foundAdidasShoes[i].img_display%>"
                               alt="<%=foundAdidasShoes[i].name%>">

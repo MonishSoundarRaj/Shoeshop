@@ -3,8 +3,8 @@
     <div class="shoe-car-box">
         <%for(var i = 0; i < found.length; i++ ){%>
             <div class="shoe-card">
-                <div class="card-top">
-                    <img class="shoe-image" src="<%=found[i].img_display%>" alt="nike-air-force-1">
+                <div class="card-top" id = "<%=found[i]._id%>">
+                    <img id = "<%=found[i]._id%>" class="shoe-image" src="<%=found[i].img_display%>" alt="nike-air-force-1">
                 </div>
                 <div class="shoe-card-bottom">
                     <h3 class="shoe-card-name"><%if(found[i].name.length < 22){%><%=found[i].name%><%}else{%><%=found[i].name.slice(0, 23)%><%}%></h3>

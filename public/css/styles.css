@@ -64,6 +64,7 @@ html
 .nav-li a{
   text-decoration: none;
   color: white;
+  font-size: 0.8rem;
 }
 
 
@@ -108,7 +109,7 @@ html
   display: flex;
   align-items: center;
   font-size: 0.6rem;
-  font-family: var(--font-Bebas);
+ font-family: var(--font-Bebas);
   height: 1rem;
 }
 
@@ -170,6 +171,10 @@ html
   width: 14rem;
   transform: rotatey(3.142rad) translate(50%, -50%);
 }
+.shoe-name,.shoe-price{
+  font-family: var(--font-Bebas);
+
+}
 /* .nike-green-box::after{
   content: "";
   width: 250%;
@@ -197,6 +202,7 @@ html
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: var(--font-Bebas);
   z-index: 0;
 }
 .bottom-text-first-element {
@@ -348,7 +354,9 @@ html
 .men-shoe-card-bottom{
   cursor: default;
 }
-
+.shoe-card-name,.shoe-card-prize{
+  font-family: var(--font-Bebas);
+}
 .men-shoe-card:hover{
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
@@ -589,7 +597,9 @@ html
  margin-top: 2rem;
  width: 8rem;
 }
-
+.shoe-card-bottom{
+  cursor: default;
+}
 .shoe-card:hover{
  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 } 
@@ -598,7 +608,8 @@ html
 /* cart css  */
 .cart-main{
   font-family: var(--font-Bebas);
-  display: flex;
+  /* display: flex; */
+  /* flex-direction: row; */
   margin: 3rem;
   text-transform: uppercase;
 }
@@ -651,10 +662,12 @@ html
   align-items: center;
 }
 
-
 .right-side-cart{
   margin-left: 2rem;
   background: black;
+  position: absolute;
+  top: 5.5rem;
+  right: 3rem;
   width: 25%;
   color: white;
   height: 20rem;
