@@ -2,7 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const ejs = require("ejs");
-const _ = require("lodash")
+const _ = require("lodash");
+const { add } = require("lodash");
 
 const app = express();
 
@@ -18,8 +19,25 @@ const shoeDetailSchema = new mongoose.Schema({
     img_display: String,
     img_cart: String
 })
+const UserAddress = new mongoose.Schema({
+    customerDetails: {
+        name: String,
+        email: String,
+        phone: Number,
+        deliveryAddress: String,
+        landmark: String,
+        city: String,
+        state: String,
+        country: String,
+        zipcode: String
+    }, 
+    productOrdered: {
+        idOfTheProducts: [String]
+    }
+}) 
 
 const Shoe = new mongoose.model('shoe', shoeDetailSchema);
+const User = new mongoose.model('user', UserAddress);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'))
@@ -149,7 +167,32 @@ app.route("/search")
         })
     })
 
-
+app.route("/user")
+   .post((req, res) => {
+       const addUser = new User({
+        customerDetails: {
+            name: req.body.name,
+            email: req.body.email,
+            phone: req.body.phone,
+            deliveryAddress: req.body.address,
+            landmark: req.body.landmark || "did not enter",
+            city: req.body.city,
+            state: req.body.state,
+            country: req.body.country,
+            zipcode: req.body.zipcode
+        }, 
+        productOrdered: {
+            idOfTheProducts: shoeArrayServer
+        }  
+       })
+       addUser.save((err) => {
+           if(!err){
+        res.send("conformed")
+       }
+    else{
+        console.log(err);
+    }})
+   })
 app.listen(3000, () => {
     console.log("server is up and running in PORT 3000")
 })

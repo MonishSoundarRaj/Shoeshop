@@ -56,6 +56,3 @@ document.querySelector(".display-product-buy-now").addEventListener("click", () 
         // .then(response => {window.location.href = response.url}).catch(err => {console.log(err)});
     })();
 })
-// document.querySelector(".display-product-buy-now").addEventListener("click", () => {
-//     console.log("clicked")
-// })

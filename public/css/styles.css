@@ -549,10 +549,16 @@ html
   outline: none;
   border: none;
   border-radius: 5rem;
+  /* background: rgb(16,12,8); */
   background: black;
   color: white;
   margin-top: 3rem;
  cursor: pointer;
+ transition: background 0.3s;
+}
+.display-product-buy-now:hover{
+  background: rgb(138, 53, 53);
+  
 }
 .product-details p{
   font-size: 0.8rem;
@@ -608,10 +614,9 @@ html
 /* cart css  */
 .cart-main{
   font-family: var(--font-Bebas);
-  /* display: flex; */
-  /* flex-direction: row; */
   margin: 3rem;
   text-transform: uppercase;
+  height: 100vh;
 }
 .left-side-cart{
   width: 70%;
@@ -653,7 +658,6 @@ html
   outline: none;
   cursor: pointer;
 }
-
 .items-box ul{
   margin-left: 3rem;
 }
@@ -661,7 +665,6 @@ html
   display: flex;
   align-items: center;
 }
-
 .right-side-cart{
   margin-left: 2rem;
   background: black;
@@ -713,7 +716,7 @@ html
 }
 
 
-/* contact info */
+/* shipping info and payment */
 .address-main{
     font-family: sans-serif;
     text-transform: uppercase;
@@ -721,6 +724,9 @@ html
 }
 .address-main p{
    margin: 3rem 0 0 3rem; 
+}
+.highlight{
+  font-weight: bold;
 }
 .address-box{
   background: rgb(181, 194, 199);
@@ -770,7 +776,14 @@ html
 .container-address{
   display: flex;
 }
-
+.footer-cart{
+  text-align: center;
+  font-family: sans-serif;
+  width: 100%;
+  font-size: 0.5rem;
+  background: #1F2833;
+  color: white;
+}
 /* footer */
 .footer-box{
   font-family: var(--font-Roboto);
