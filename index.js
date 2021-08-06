@@ -7,7 +7,7 @@ const { add } = require("lodash");
 
 const app = express();
 
-mongoose.connect("mongodb://localhost:27017/shoedetailDB", { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect("mongodb+srv://admin-brain:WQaK162@cluster0.k83rp.mongodb.net/shoedetailDB", { useUnifiedTopology: true, useNewUrlParser: true });
 
 const shoeDetailSchema = new mongoose.Schema({
     shoeBrand: String,
