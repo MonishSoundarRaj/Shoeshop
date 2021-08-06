@@ -1,3 +1,3 @@
 document.querySelector(".cart-check-out-btn").addEventListener("click", () => {
-    window.location.href = "http://localhost:3000/address"
+    window.location.href = "https://pacific-garden-66100.herokuapp.com/address"
 })

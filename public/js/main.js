@@ -1,6 +1,6 @@
 
 document.querySelector(".fa-cart-custom").addEventListener("click", () => {
-    window.location.href = "http://localhost:3000/cart"
+    window.location.href = "https://pacific-garden-66100.herokuapp.com/cart"
 })
 
 var numberOfCards = document.querySelectorAll(".men-shoe-card").length;
