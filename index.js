@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const ejs = require("ejs");
 const _ = require("lodash");
-const { add } = require("lodash");
 
 const app = express();
 
@@ -45,9 +44,9 @@ app.set('view engine', 'ejs');
 app.use(express.json({ limit: '1mb' }))
 
 app.route("/DB")
-    .get((req, res) => {
-        res.render('addtoDB');
-    })
+    // .get((req, res) => {
+    //     res.render('addtoDB');
+    // })
     .post((req, res) => {
         const AddShoeDetails = new Shoe({
             shoeBrand: req.body.brand,
@@ -153,7 +152,6 @@ app.route('/address')
     .get((req, res) => {
         res.render('address')
     });
-
 app.route("/search")
     .post((req, res) => {
         const searchTerm = _.capitalize(req.body.search)

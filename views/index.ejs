@@ -2,23 +2,26 @@
     <section class="hero-section">
         <div class="main-hero-container">
             <div class="carousel-container">
-                <div class="first-carousel-element">
-                    <h1 class="text-nike">NIKE AIR</h1>
-                    <div class="nike-green-box">
-                        <img class="nike-green" src="images/yellow-with-shadow.png" alt="NIKE SHOES IMAGE">
+                <div class="slide">
+                    <div class="first-carousel-element">
+                        <h1 class="text-nike">NIKE AIR</h1>
+                        <div class="nike-green-box">
+                            <img class="nike-green" src="images/yellow-with-shadow.png" alt="NIKE SHOES IMAGE">
+                        </div>
+                        <h2 class="bottom-text-first-element">BE LENGENDARY</h2>
+                        <img src="images/nike-logo.png" alt="nike logo" class="nike-logo">
+                        <span class="circle-left" style="font-size: 0.5rem;">
+                            <i class="far fa-dot-circle fa-xs fas-custom"></i>
+                            <i class="fas fa-circle fa-xs fas-custom "></i>
+                            <i class="fas fa-circle fa-xs fas-custom"></i>
+                        </span>
+                        <!-- <span class="chevron">
+                            <i class="fas fa-chevron-right fas-custom"></i>
+                            <i class="fas fa-chevron-left fas-custom"></i>
+                        </span> -->
                     </div>
-                    <h2 class="bottom-text-first-element">BE LENGENDARY</h2>
-                    <img src="images/nike-logo.png" alt="nike logo" class="nike-logo">
-                    <span class="circle-left" style="font-size: 0.5rem;">
-                        <i class="far fa-dot-circle fa-xs fas-custom"></i>
-                        <i class="fas fa-circle fa-xs fas-custom "></i>
-                        <i class="fas fa-circle fa-xs fas-custom"></i>
-                    </span>
-                    <span class="chevron">
-                        <i class="fas fa-chevron-right fas-custom"></i>
-                        <i class="fas fa-chevron-left fas-custom"></i>
-                    </span>
                 </div>
+            <div class="slide">
                 <div class="second-carousel-element">
                     <img src="images/nike-red-no-bg.png" alt="nike max image" class="nike-red nike-left">
                     <img src="images/nike-red-no-bg.png" alt="nike max image" class="nike-red nike-right">
@@ -30,11 +33,13 @@
                         <i class="far fa-dot-circle fa-xs fas-custom"></i>
                         <i class="fas fa-circle fa-xs fas-custom "></i>
                     </span>
-                    <span class="chevron">
+                    <!-- <span class="chevron">
                         <i class="fas fa-chevron-right fas-custom"></i>
                         <i class="fas fa-chevron-left fas-custom"></i>
-                    </span>
+                    </span> -->
                 </div>
+            </div>
+            <div class="slide">
                 <div class="third-carousel-element">
                     <img src="images/nike-black-no-bg.png" alt="nike max 09 image" class="nike-black">
                     <img src="images/nike-logo.png" alt="nike logo" class="nike-logo">
@@ -48,36 +53,37 @@
                         <i class="fas fa-circle fa-xs fas-custom"></i>
                         <i class="far fa-dot-circle fa-xs fas-custom"></i>
                     </span>
-                    <span class="chevron">
+                    <!-- <span class="chevron">
                         <i class="fas fa-chevron-right fas-custom"></i>
                         <i class="fas fa-chevron-left fas-custom"></i>
-                    </span>
+                    </span> -->
                 </div>
             </div>
+           </div>
         </div>
     </section>
 
     <section class="products">
         <div class="men-shoes">
-            <%const NumberSend =  randomNumberNike%>
-             <%for(let i=NumberSend; i < (NumberSend + 4); i++){%>
-               
+            <%const NumberSend=randomNumberNike%>
+                <%for(let i=NumberSend; i < (NumberSend + 4); i++){%>
+
                     <div id="<%=foundNikeShoes[i]._id%>" class="men-shoe-card">
-                     <div id="<%=foundNikeShoes[i]._id%>" class="men-shoe-card-top">
-                            <img id="<%=foundNikeShoes[i]._id%>" class="shoe-image" src="<%=foundNikeShoes[i].img_display%>"
-                               alt="<%=foundNikeShoes[i].name%>">
-                     </div>
-                       <div class="men-shoe-card-bottom">
-                             <h3 class="shoe-name">
-                              <%=foundNikeShoes[i].name%>
+                        <div id="<%=foundNikeShoes[i]._id%>" class="men-shoe-card-top">
+                            <img id="<%=foundNikeShoes[i]._id%>" class="shoe-image"
+                                src="<%=foundNikeShoes[i].img_display%>" alt="<%=foundNikeShoes[i].name%>">
+                        </div>
+                        <div class="men-shoe-card-bottom">
+                            <h3 class="shoe-name">
+                                <%=foundNikeShoes[i].name%>
                             </h3>
                             <h4 class="shoe-prize">
-                                 <%=foundNikeShoes[i].price%>
-                          </h4>
+                                <%=foundNikeShoes[i].price%>
+                            </h4>
+                        </div>
                     </div>
-                     </div>
-                    
-             <%}%>  
+
+                    <%}%>
         </div>
     </section>
     <section class="adidas">
@@ -96,21 +102,21 @@
     <section class="adidas-section">
         <div class="men-shoes">
             <%for(let i=NumberSend; i < (NumberSend + 4); i++){%>
-                   <div id="<%=foundNikeShoes[i]._id%>" class="men-shoe-card">
+                <div id="<%=foundNikeShoes[i]._id%>" class="men-shoe-card">
                     <div id="<%=foundAdidasShoes[i]._id%>" class="men-shoe-card-top">
-                           <img id="<%=foundAdidasShoes[i]._id%>" class="shoe-image" src="<%=foundAdidasShoes[i].img_display%>"
-                              alt="<%=foundAdidasShoes[i].name%>">
+                        <img id="<%=foundAdidasShoes[i]._id%>" class="shoe-image"
+                            src="<%=foundAdidasShoes[i].img_display%>" alt="<%=foundAdidasShoes[i].name%>">
                     </div>
-                      <div class="men-shoe-card-bottom">
-                            <h3 class="shoe-name">
-                             <%=foundAdidasShoes[i].name%>
-                           </h3>
-                           <h4 class="shoe-prize">
-                                <%=foundAdidasShoes[i].price%>
-                         </h4>
-                   </div>
+                    <div class="men-shoe-card-bottom">
+                        <h3 class="shoe-name">
+                            <%=foundAdidasShoes[i].name%>
+                        </h3>
+                        <h4 class="shoe-prize">
+                            <%=foundAdidasShoes[i].price%>
+                        </h4>
                     </div>
-            <%}%>  
+                </div>
+                <%}%>
         </div>
     </section>
     <%-include("partials/footer")-%>

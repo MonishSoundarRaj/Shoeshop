@@ -126,15 +126,6 @@ html
   cursor: pointer;
 }
 
-/* carousel start */
-.main-hero-container{
-    overflow: hidden;
-}  
-.carousel-container{
-    width: 300vw;
-    display: flex;
-} 
-
 /* carousel-common-element-style */
 .nike-logo {
   width: 3rem;
@@ -153,6 +144,33 @@ html
   z-index: 0;
 }
 
+/* carousel start */
+.main-hero-container{
+    overflow: hidden;
+}  
+.carousel-container{
+    width: 300vw;
+    height: 80vh;
+    display: flex;
+    position: relative;
+    animation: slider 25s infinite;
+} 
+@keyframes slider {
+  0%{left: 0}
+  15%{left: 0}
+  25%{left: -100vw}
+  35%{left: -100vw}
+  50%{left: -200vw}
+  60%{left: -200vw}
+  75%{left: -100vw}
+  85%{left: 0}
+  100%{left: 0}
+}
+/* .slide{
+  width: 100vw;
+  height: 85vh;
+} */
+
 
 /* First(active) carousel-element */
 .first-carousel-element {
@@ -162,6 +180,7 @@ html
   font-family: var(--font-Roboto);
   color: white;
   position: relative;
+  /* position: absolute; */
 }
 .nike-green {
   z-index: 1;
@@ -221,6 +240,7 @@ html
   font-family: var(--font-Roboto);
   color: white;
   position: relative;
+  /* position: absolute; */
 }
 
 .second-element-carousel-h1 {
@@ -270,6 +290,7 @@ html
   font-family: var(--font-Roboto);
   color: white;
   position: relative;
+  /* position: absolute; */
 }
 
 .nike-black{
