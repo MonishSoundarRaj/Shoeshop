@@ -1,7 +1,17 @@
-
 document.querySelector(".fa-cart-custom").addEventListener("click", () => {
-    window.location.href = "https://pacific-garden-66100.herokuapp.com/cart"
+    (async () => {
+        var data = {value: localStorage.getItem('customerCartList')}
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+              },
+            body: JSON.stringify(data)
+        }
+        fetch("/cart", options).then(response => {window.location.href = response.url}).catch(err => {console.log(err)});
+    })();
 })
+
 
 var numberOfCards = document.querySelectorAll(".men-shoe-card").length;
 for (let i = 0; i < numberOfCards; i++) {
@@ -42,17 +52,12 @@ for (let i = 0; i < numberOfCards; i++) {
 }
 
 document.querySelector(".display-product-buy-now").addEventListener("click", () => {
-    (async () => {
-        const clickedProductID = await event.target.id
-        var data = {value: clickedProductID}
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-              },
-            body: JSON.stringify(data)
-        }
-        fetch("/cart", options)
-        // .then(response => {window.location.href = response.url}).catch(err => {console.log(err)});
-    })();
+    var clickedShoeId = event.target.id;
+    if(localStorage.getItem('customerCartList') == null){
+        localStorage.setItem('customerCartList', '[]')
+    }
+    var old_data = JSON.parse(localStorage.getItem('customerCartList'))
+    old_data.push(clickedShoeId)
+    localStorage.setItem('customerCartList', JSON.stringify(old_data));
 })
+

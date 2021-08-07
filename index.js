@@ -116,6 +116,7 @@ app.get("/kids", (req, res) => {
     })
 })
 var shoeArrayServer = [];
+
 app.get('/cart', (req, res) => {
     var subTotal = 0;
     for(var i = 0; i < shoeArrayServer.length; i++){
@@ -126,13 +127,18 @@ app.get('/cart', (req, res) => {
    res.render("cart", { shoeArray: shoeArrayServer, total: total, subTotal: subTotal })
 })
 app.post("/cart", (req, res) => {
-    Shoe.findOne({ _id : req.body.value}, (err, cartitem) => {
+    shoeArrayServer = [];
+    var convertingArray = JSON.parse(req.body.value);
+    for(let i = 0; i < convertingArray.length; i++){
+    Shoe.findOne({ _id : convertingArray[i]}, (err, cartitem) => {
         if(!err){
             shoeArrayServer.push(cartitem);
         }else{
             console.log(err);
         }
     })
+  }
+  res.json("localhost:3000/cart")
 })
 
 var displayItem;
