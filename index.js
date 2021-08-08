@@ -117,6 +117,7 @@ app.get("/kids", (req, res) => {
         }
     })
 })
+
 var shoeArrayServer = [];
 
 app.get('/cart', (req, res) => {
@@ -128,6 +129,8 @@ app.get('/cart', (req, res) => {
     let total = subTotal + 12 + 15;
    res.render("cart", { shoeArray: shoeArrayServer, total: total, subTotal: subTotal })
 })
+
+
 app.post("/cart", (req, res) => {
     shoeArrayServer = [];
     var convertingArray = JSON.parse(req.body.value);
@@ -160,6 +163,7 @@ app.route('/address')
     .get((req, res) => {
         res.render('address')
     });
+
 app.route("/search")
     .post((req, res) => {
         const searchTerm = _.capitalize(req.body.search)
@@ -200,7 +204,7 @@ app.route("/user")
     }})
    })
 
-// only for testing
+
 app.get("/payment", (req, res) => {
     res.render("payment");
 })
@@ -210,10 +214,6 @@ app.get("/underconstruction", (req, res) => {
 app.post("/orderconfirmed", (req, res) => {
     res.render("confirmation")
 })
-
-
-
-
 
 
 app.listen(process.env.PORT||3000, () => {
