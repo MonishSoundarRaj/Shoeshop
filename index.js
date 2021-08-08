@@ -141,7 +141,7 @@ app.post("/cart", (req, res) => {
         }
     })
   }
-//    res.redirect('/cart');
+   res.redirect('/cart');
 })
 
 var displayItem;

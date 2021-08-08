@@ -1,6 +1,6 @@
 document.querySelector(".counter-display").innerHTML = JSON.parse(localStorage.getItem("customerCartList")).length;
 document.querySelector(".fa-cart-custom").addEventListener("click", () => {
-    (() => {
+    (async () => {
         var data = {value: localStorage.getItem('customerCartList')}
         const options = {
             method: 'POST',

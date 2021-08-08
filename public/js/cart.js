@@ -12,8 +12,7 @@ for(let i = 0; i < removeBtn; i++){
             }
             localStorage.setItem('customerCartList', JSON.stringify(totalItems))
         }
-        request();
-        function request () {
+       (async () => {
             var data = {value: localStorage.getItem('customerCartList')}
             const options = {
                 method: 'POST',
@@ -23,6 +22,6 @@ for(let i = 0; i < removeBtn; i++){
                 body: JSON.stringify(data)
             }
             fetch("/cart", options).then(response => {window.location.href = response.url}).catch(err => {console.log(err)});
-        };
+        })();
     })
 }
