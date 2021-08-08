@@ -214,9 +214,7 @@ app.get("/underconstruction", (req, res) => {
 app.post("/orderconfirmed", (req, res) => {
     res.render("confirmation")
 })
-app.get("/orderconfirmed", (req, res) => {
-    res.render("confirmation")
-})
+
 
 
 app.listen(process.env.PORT||3000, () => {
