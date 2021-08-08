@@ -9,8 +9,7 @@ document.querySelector(".fa-cart-custom").addEventListener("click", () => {
               },
             body: JSON.stringify(data)
         }
-        fetch("/cart", options)
-        // .then(response => {window.location.href = response.url}).catch(err => {console.log(err)});
+        fetch("/cart", options).then(response => {window.location.href = response.url}).catch(err => {console.log(err)});
     })();
 })
 
