@@ -763,31 +763,31 @@ html
 
 
 /* shipping info and payment */
-.address-main{
+.address-main, .payment-main{
     font-family: sans-serif;
     text-transform: uppercase;
     font-size: 0.5rem;   
 }
-.address-main p{
+.address-main p, .payment-main p{
    margin: 3rem 0 0 3rem; 
 }
 .highlight{
   font-weight: bold;
 }
-.address-box{
+.address-box, .payment-box{
   background: rgb(181, 194, 199);
   font-family: sans-serif;
  width: 50%;
   margin: 0 3rem 3rem  3rem;
   padding: 2rem 0 3rem 3rem;
 }
-.address-box label{
+.address-box label, .payment-box label{
   display: block;
   margin-top: 1rem;
   font-size: 0.6rem;
   text-transform: capitalize;
 }
-.address-box input{
+.address-box input, .payment-box input{
   margin-top: 0.5rem;
   display: block;
   outline: none;
@@ -804,7 +804,7 @@ html
   color: #9B2335;
 }
 
-.address-box button{
+.address-box button, .payment-box button{
   border: none;
   outline: none;
   padding: 0.4rem;
@@ -815,7 +815,7 @@ html
   transition: background 0.3s;
 }
 
-.address-box button:hover{
+.address-box button:hover, .payment-box button:hover{
   background: #9B2335;
   color: #000000;
 }
@@ -902,4 +902,26 @@ html
 }
 .main-under-construction a:hover{
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+ /* css not found page */
+.main-not-found{
+  height: 65vh;
+  text-align: center;
+  font-family: var(--font-Bebas);
+  font-size: 0.5rem;
+  background: linear-gradient(to right, #ebebff, #f5ebff);
+}
+
+/* css payment page */
+.payment-box label{
+  margin-bottom: 0.5rem;
+}
+
+/* css confirmation */
+.confirmation{
+  font-family: var(--font-bebas);
+  height: 100vh;
+  background: linear-gradient(to right, #ebebff, #f5ebff);
+  color: #9B2335;
 }

@@ -7,8 +7,7 @@ const path = require("path");
 const favicon = require('serve-favicon')
 
 const app = express();
-
-mongoose.connect("mongodb+srv://admin-brain:WQaK162@cluster0.k83rp.mongodb.net/shoedetailDB", { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect(" mongodb+srv://admin-brain:WQaK162@cluster0.k83rp.mongodb.net/shoedetailDB", { useUnifiedTopology: true, useNewUrlParser: true });
 
 const shoeDetailSchema = new mongoose.Schema({
     shoeBrand: String,
@@ -46,29 +45,29 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.set('view engine', 'ejs');
 app.use(express.json({ limit: '1mb' }))
 
-app.route("/DB")
-    // .get((req, res) => {
-    //     res.render('addtoDB');
-    // })
-    .post((req, res) => {
-        const AddShoeDetails = new Shoe({
-            shoeBrand: req.body.brand,
-            category: req.body.category,
-            productId: req.body.productId,
-            availableSize: [req.body.size],
-            name: req.body.modelname,
-            price: req.body.price,
-            img_display: req.body.displaylink,
-            img_cart: req.body.cartlink
-        })
-        AddShoeDetails.save((err) => {
-            if (!err) {
-                res.send("success")
-            } else {
-                res.send("fialure")
-            }
-        })
-    })
+// app.route("/DB")
+//     .get((req, res) => {
+//        res.render('addtoDB');
+//      })
+//     .post((req, res) => {
+//         const AddShoeDetails = new Shoe({
+//             shoeBrand: req.body.brand,
+//             category: req.body.category,
+//             productId: req.body.productId,
+//             availableSize: [req.body.size],
+//             name: req.body.modelname,
+//             price: req.body.price,
+//             img_display: req.body.displaylink,
+//             img_cart: req.body.cartlink
+//         })
+//         AddShoeDetails.save((err) => {
+//             if (!err) {
+//                 res.send("success")
+//             } else {
+//                 res.send("fialure")
+//             }
+//         })
+//     })
 
 
 app.get('', (req, res) => {
@@ -141,7 +140,7 @@ app.post("/cart", (req, res) => {
         }
     })
   }
-   res.redirect('/cart');
+//    res.redirect('/cart');
 })
 
 var displayItem;
@@ -167,7 +166,7 @@ app.route("/search")
         Shoe.find({ shoeBrand: searchTerm }, async (err, searchItems) => {
             const foundItems = await searchItems
             if (foundItems.length === 0) {
-                res.send("0 items found")
+                res.render('notFound')
             } else {
                 res.render('productpage', { found: foundItems })
             }
@@ -194,44 +193,33 @@ app.route("/user")
        })
        addUser.save((err) => {
            if(!err){
-        res.send("conformed")
+        res.redirect("/payment")
        }
     else{
         console.log(err);
     }})
    })
+
+// only for testing
+app.get("/payment", (req, res) => {
+    res.render("payment");
+})
 app.get("/underconstruction", (req, res) => {
     res.render('underConstruction');
 })
+app.post("/orderconfirmed", (req, res) => {
+    res.render("confirmation")
+})
+
+
+
+
+
+
 app.listen(process.env.PORT||3000, () => {
     console.log("server is up and running in PORT 3000")
 })
 
 
 
-// "test": "echo \"Error: no test specified\" && exit 1"
-// app.route("/productpage")
-//     .get((req, res) => {
-//         Shoe.find({ category: "kids" }, async (err, foundItem) => {
-//             const foundItems = await foundItem
-//             if (foundItems.length === 0) {
-//                 res.send("0 items found")
-//             } else {
-//                 res.render('productpage', { found: foundItems })
-//             }
-//         })
-//     });
-//     .get((req, res) => {
-//      const searchTerm = req.body.search;
-//      console.log(req.body.search)
-//     Shoe.find({ shoeBrand: "Nike" }, async (err, searchItems) => {
-//         console.log(searchItems.length)
-//         const foundItems = await searchItems
-//         console.log(foundItems.length)
-//         if (foundItems.length === 0) {
-//             res.send("0 items found")
-//         } else {
-//             res.render('productpage', { found: foundItems })
-//         }
-//     })
-// })
+

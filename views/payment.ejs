@@ -1,0 +1,15 @@
+<%-include('partials/paymentHeader')-%>
+<div class="payment-main">
+<p>Shipping-address > <span class="highlight">payment</span> > confirmation</p>
+<div class="payment-box">
+    <form action="/orderconfirmed" method="POST">
+        <label for="payment-methods">Choose A Payment Method:</label>
+        <select id="payment-methods" name="options">
+          <option value="COD">Cash On Delivery(COD)</option>
+        </select>
+        <br>
+        <button>Confirm your order</button>
+      </form>
+</div>
+</div>
+<%-include('partials/paymentFooter')-%>

@@ -1,5 +1,6 @@
 document.querySelector(".cart-check-out-btn").addEventListener("click", () => {
     window.location.href = "https://pacific-garden-66100.herokuapp.com/address"
+    // window.location.href = "http://localhost:3000/address"
 })
 
 const removeBtn = document.querySelectorAll(".cart-remove-btn").length
