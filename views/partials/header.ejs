@@ -11,7 +11,7 @@
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/68b00e75de.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
-    <title>Document</title>
+    <title>ShoeShop</title>
 </head>
 
 <body>
@@ -23,16 +23,19 @@
                 <li class="nav-li"><a href="/women">WOMEN</a></li>
                 <li class="nav-li"><a href="/kids">KIDS</a></li>
             </ul>
-                <div class="searchbar-box">
-                    <form action="/search" method="POST" class="search-form">
-                    <input class="search" type="text" name="search">
+            <div class="searchbar-box">
+                <form action="/search" method="POST" class="search-form">
+                    <input class="search" type="text" name="search" placeholder="Search by brand...">
                     <button class="search-button"><i class="fas fa-search search-icon"></i></button>
                     <form>
-                </div>
+            </div>
             <span class="check-account-box">
                 <i class="fas fa-user fa-user-custom"></i>
                 <p>HI Guest</p>
             </span>
-            <i class="fas fa-shopping-cart fa-cart-custom"></i>
+            <span class="cart-box">
+                <div class="counter"><h3 class="counter-display"></h3></div>
+                <i class="fas fa-shopping-cart fa-cart-custom"></i>
+            </span>
         </nav>
     </div>

@@ -1,5 +1,6 @@
+document.querySelector(".counter-display").innerHTML = JSON.parse(localStorage.getItem("customerCartList")).length;
 document.querySelector(".fa-cart-custom").addEventListener("click", () => {
-    (async () => {
+    (() => {
         var data = {value: localStorage.getItem('customerCartList')}
         const options = {
             method: 'POST',
@@ -13,12 +14,11 @@ document.querySelector(".fa-cart-custom").addEventListener("click", () => {
 })
 
 
-var numberOfCards = document.querySelectorAll(".men-shoe-card").length;
+var numberOfCards = document.querySelectorAll(".men-shoe-card-top").length;
 for (let i = 0; i < numberOfCards; i++) {
-    document.querySelectorAll(".men-shoe-card")[i].addEventListener("click", () => {
+    document.querySelectorAll(".men-shoe-card-top")[i].addEventListener("click", () => {
         (async () => {
             const clickedProductID = await event.target.id
-            console.log(clickedProductID)
             var data = {value: clickedProductID}
             const options = {
                 method: 'POST',
@@ -32,12 +32,11 @@ for (let i = 0; i < numberOfCards; i++) {
     })
 }
 
-var numberOfCards = document.querySelectorAll(".shoe-card").length;
+var numberOfCards = document.querySelectorAll(".card-top").length;
 for (let i = 0; i < numberOfCards; i++) {
-    document.querySelectorAll(".shoe-card")[i].addEventListener("click", () => {
+    document.querySelectorAll(".card-top")[i].addEventListener("click", () => {
         (async () => {
             const clickedProductID = await event.target.id
-            console.log(clickedProductID)
             var data = {value: clickedProductID}
             const options = {
                 method: 'POST',
@@ -50,6 +49,7 @@ for (let i = 0; i < numberOfCards; i++) {
         })();
     })
 }
+ 
 
 document.querySelector(".display-product-buy-now").addEventListener("click", () => {
     var clickedShoeId = event.target.id;
@@ -59,5 +59,6 @@ document.querySelector(".display-product-buy-now").addEventListener("click", () 
     var old_data = JSON.parse(localStorage.getItem('customerCartList'))
     old_data.push(clickedShoeId)
     localStorage.setItem('customerCartList', JSON.stringify(old_data));
+    document.querySelector(".counter-display").innerHTML = JSON.parse(localStorage.getItem("customerCartList")).length;
 })
 

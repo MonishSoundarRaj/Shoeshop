@@ -19,10 +19,10 @@
                             </li>
                             <li>
                                 <h4>
-                                    <%=shoeArray[i].productId%>
+                                    Product-ID: <%=shoeArray[i].productId%>
                                 </h4>
                             </li>
-                            <li><button type="button">Remove</button></li>
+                            <li><button type="button" class="cart-remove-btn" id="<%=shoeArray[i]._id%>">Remove</button></li>
                         </ul>
                     </span>
                     <h2><%=shoeArray[i].price%></h2>
@@ -54,6 +54,6 @@
     </div>
 
  <script src="/js/cart.js"></script>
-
+<script src="/js/main.js"></script>
 </body>
 </html>
