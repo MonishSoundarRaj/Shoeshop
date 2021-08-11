@@ -1,4 +1,9 @@
-// document.querySelector(".counter-display").innerHTML = JSON.parse(localStorage.getItem("customerCartList")).length || 0;
+var cartItemNumber = JSON.parse(localStorage.getItem("customerCartList")).length
+if(cartItemNumber == 0){
+    document.querySelector(".counter-display").innerHTML = 0;
+}else{
+    document.querySelector(".counter-display").innerHTML = cartItemNumber;
+}
 document.querySelector(".fa-cart-custom").addEventListener("click", () => {
     (async () => {
         var data = {value: localStorage.getItem('customerCartList')}

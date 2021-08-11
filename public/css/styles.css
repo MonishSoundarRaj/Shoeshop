@@ -479,6 +479,9 @@ html
   font-family: var(--font-Roboto);
   font-weight: bold;
 }
+.incrementor{
+  cursor: not-allowed !important;
+}
 .product-image{
   display: grid;
   grid-template-columns: auto auto;
