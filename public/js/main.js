@@ -1,4 +1,4 @@
-document.querySelector(".counter-display").innerHTML = JSON.parse(localStorage.getItem("customerCartList")).length;
+document.querySelector(".counter-display").innerHTML = JSON.parse(localStorage.getItem("customerCartList")).length || 0;
 document.querySelector(".fa-cart-custom").addEventListener("click", () => {
     (async () => {
         var data = {value: localStorage.getItem('customerCartList')}
@@ -59,6 +59,6 @@ document.querySelector(".display-product-buy-now").addEventListener("click", () 
     var old_data = JSON.parse(localStorage.getItem('customerCartList'))
     old_data.push(clickedShoeId)
     localStorage.setItem('customerCartList', JSON.stringify(old_data));
-    document.querySelector(".counter-display").innerHTML = JSON.parse(localStorage.getItem("customerCartList")).length;
+    document.querySelector(".counter-display").innerHTML = JSON.parse(localStorage.getItem("customerCartList")).length || 0;
 })
 
