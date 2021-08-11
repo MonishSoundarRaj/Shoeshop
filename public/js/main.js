@@ -1,4 +1,4 @@
-document.querySelector(".counter-display").innerHTML = JSON.parse(localStorage.getItem("customerCartList")).length || 0;
+// document.querySelector(".counter-display").innerHTML = JSON.parse(localStorage.getItem("customerCartList")).length || 0;
 document.querySelector(".fa-cart-custom").addEventListener("click", () => {
     (async () => {
         var data = {value: localStorage.getItem('customerCartList')}
