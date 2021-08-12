@@ -1,7 +1,7 @@
-var cartItemNumber = JSON.parse(localStorage.getItem("customerCartList")).length
 if(cartItemNumber == 0){
     document.querySelector(".counter-display").innerHTML = 0;
 }else{
+    var cartItemNumber = JSON.parse(localStorage.getItem("customerCartList")).length
     document.querySelector(".counter-display").innerHTML = cartItemNumber;
 }
 document.querySelector(".fa-cart-custom").addEventListener("click", () => {
