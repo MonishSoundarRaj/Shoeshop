@@ -1,3 +1,6 @@
+if(localStorage.getItem('customerCartList') == null){
+    localStorage.setItem('customerCartList', '[]')
+}
 if(cartItemNumber == 0){
     document.querySelector(".counter-display").innerHTML = 0;
 }else{
